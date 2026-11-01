@@ -69,6 +69,23 @@ Testing and CI
 - Coverage: pytest-cov (CI enforces a minimum coverage threshold — configurable in `.github/workflows/ci.yml`)
 - To run tests locally: `pytest --cov=. --cov-report=term`
 
+## Git workflow and contribution notes
+
+For daily Git operations, branching, and rollback patterns used in this repository, see [docs/git-workflow.md](docs/git-workflow.md).
+
+This repo follows a simple branch model:
+
+- `main` is the stable branch
+- `feature/*` is used for new functionality and experiments
+- `fix/*` is used for targeted bug fixes
+- `hotfix/*` is reserved for urgent recovery work
+- `docs/*` is used for documentation and process improvements
+
+Before merging work, always validate locally with the repo's test workflow:
+
+```bash
+pytest --cov=. --cov-report=term
+
 Contributing
 
 - Please open issues or pull requests on GitHub. Keep changes small and include tests for new functionality.
